@@ -1,0 +1,71 @@
+data:  
+  batch_size:  16
+  dataset_dir: ./data/envitus/
+  target_station: 
+    - envitus_agg
+  train_size: 0.5
+  valid_size: 0.25
+
+model:
+  input_features: 7
+  target_features: 1
+  input_len: 48
+  horizon: 6 # outputsize
+  kernel_size: 3
+  hidden_size: 128
+  num_layers: 2  
+  dropout: 0.3
+
+train:
+  lr: 0.0005
+  lr_decay_ratio: 0.65
+  patience: 20
+  epochs: 500
+  optimizer: adam
+  criterion: mse
+
+
+
+# data:  
+#   batch_size:  24
+#   dataset_dir: ./data/Beijing/gauges_processed/
+#   nan_station: 
+#     - 植物园
+#     - 榆垡
+#   target_station: 
+#     - 房山
+#     - 天坛
+#     - 云岗
+#     - 东四环
+#     - 官园
+#     - 东四
+#     - 北部新区
+#     - 丰台花园
+#     - 东高村
+#     - 古城
+#     - 大兴
+#     - 南三环
+#     - 前门
+#     - 琉璃河
+#     - 永乐店
+#   train_size: 0.5
+#   valid_size: 0.25
+
+# model:
+#   input_features: 31
+#   target_features: 1
+#   input_len: 5
+#   horizon: 7 # outputsize
+#   kernel_size: 3
+#   hidden_size: 64
+#   num_layers: 1  
+#   dropout: 0.2
+
+# train:
+#   lr: 0.001
+#   lr_decay_ratio: 0.7
+#   patience: 20
+#   epochs: 200
+#   optimizer: adam
+#   criterion: mse
+
